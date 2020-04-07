@@ -1,2 +1,1 @@
-# rustlearn
-Implementing ML, one algorithm at a time. In Rust
+# A Rust implementation of linear regression.
