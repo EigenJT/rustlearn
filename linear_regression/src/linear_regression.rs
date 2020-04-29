@@ -2,11 +2,11 @@ pub extern crate nalgebra;
 pub use nalgebra::base::{DMatrix, DVector};
 
 
-fn predict(feature_matrix: &DMatrix<f64>, model_weights: &DVector<f64>) -> DVector<f64> {
+pub fn predict(feature_matrix: &DMatrix<f64>, model_weights: &DVector<f64>) -> DVector<f64> {
     feature_matrix * model_weights //make a prediction
 }
 
-fn sum_squared_errors(
+pub fn sum_squared_errors(
     feature_matrix: &DMatrix<f64>,
     model_weights: &DVector<f64>,
     target_vector: &DVector<f64>,
@@ -19,7 +19,7 @@ fn sum_squared_errors(
     difference.norm_squared() / (2.0 * length_of_target)
 }
 
-fn sum_squared_errors_gradient(
+pub fn sum_squared_errors_gradient(
     feature_matrix: &DMatrix<f64>,
     model_weights: &DVector<f64>,
     target_vector: &DVector<f64>,
@@ -36,7 +36,7 @@ fn sum_squared_errors_gradient(
     diagonal_square_matrix * (error.transpose() * feature_matrix).transpose()
 }
 
-fn gradient_descent(
+pub fn gradient_descent(
     feature_matrix: &DMatrix<f64>,
     target_vector: &DVector<f64>,
     learning_rate: f64,
