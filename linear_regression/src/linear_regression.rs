@@ -1,7 +1,6 @@
 pub extern crate nalgebra;
 pub use nalgebra::base::{DMatrix, DVector};
 
-
 pub fn predict(feature_matrix: &DMatrix<f64>, model_weights: &DVector<f64>) -> DVector<f64> {
     feature_matrix * model_weights //make a prediction
 }

@@ -1,3 +1,6 @@
+pub extern crate nalgebra;
+pub use nalgebra::base::{DMatrix, DVector};
+
 mod linear_regression;
 
 struct RegressionData {
@@ -14,5 +17,3 @@ struct LinearRegressor {
     data: RegressionData,
     model: ModelWeights,
 }
-
-
